@@ -2,44 +2,35 @@ return {
   {
     "williamboman/mason.nvim",
     config = function()
-      require('mason').setup()
-    end
+      require("mason").setup()
+    end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = {
-          'lua_ls',
-          'csharp_ls',
-          'clangd',
-          'cssls',
-          'eslint',
-          'gopls',
-          'html',
-          'jsonls',
-          'marksman',
-          'tsserver',
-          'intelephense',
-          'pyre',
-          'sqlls'
-        }
+        auto_install = true,
+        highlight = { enabled = true },
+        indent = { enabled = true },
       })
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require('lspconfig')
-      lspconfig.lua_ls.setup({})
-      lspconfig.csharp_ls.setup({})
-      lspconfig.intelephense.setup({})
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local lspconfig = require("lspconfig")
 
-      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
-      vim.keymap.set({ 'n' }, '<leader>ca', vim.lsp.buf.code_action, {})
-    end
-  }
+      lspconfig.lua_ls.setup({ capabilities = capabilities })
+      lspconfig.csharp_ls.setup({ capabilities = capabilities })
+      lspconfig.tsserver.setup({ capabilities = capabilities })
+      lspconfig.intelephense.setup({ capabilities = capabilities })
+
+      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
+      vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
+  },
 }
