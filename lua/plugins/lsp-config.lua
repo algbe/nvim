@@ -20,12 +20,15 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
+			local util = require("lspconfig.util")
 
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.csharp_ls.setup({ capabilities = capabilities })
 			lspconfig.clangd.setup({ capabilities = capabilities })
-			--lspconfig.omnisharp.setup({ capabilities = capabilities })
-			lspconfig.tsserver.setup({ capabilities = capabilities })
+			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+				root_dir = util.root_pattern("tsconfig.base.json", "tsconfig.json", "package.json", ".git"),
+			})
 			lspconfig.intelephense.setup({ capabilities = capabilities })
 			lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 
