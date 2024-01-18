@@ -31,6 +31,7 @@ return {
 			})
 			lspconfig.intelephense.setup({ capabilities = capabilities })
 			lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+			lspconfig.pyright.setup({ capabilities = capabilities })
 
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
