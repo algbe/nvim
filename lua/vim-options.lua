@@ -17,6 +17,7 @@ vim.cmd("set cursorline")
 vim.cmd("set termguicolors")
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 vim.keymap.set("n", "<leader>h", ":wincmd h<CR>", {})
 vim.keymap.set("n", "<leader>j", ":wincmd j<CR>", {})

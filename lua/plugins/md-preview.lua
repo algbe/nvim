@@ -5,9 +5,9 @@ return {
         require("md-preview").setup({
             viewer = {
                 -- mdcat
-                -- exec = "mdcat",
-                -- exec_path = "",
-                -- args = { "--local" },
+                exec = "mdcat",
+                exec_path = "",
+                args = { "--local" },
 
                 -- glow
                 -- exec = "glow",
@@ -15,9 +15,9 @@ return {
                 -- args = { "-s", "dark" },
 
                 -- terminal markdown viewer
-                exec = "mdv",
-                exec_path = "",
-                args = { "-c", 80 },
+                -- exec = "mdv",
+                -- exec_path = "",
+                -- args = { "-c", 80 },
             },
             -- Markdown preview term
             term = {
