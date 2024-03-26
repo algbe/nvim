@@ -36,6 +36,6 @@ return {
 			color_overrides = {},
 			highlight_overrides = {},
 		})
-		vim.cmd.colorscheme("catppuccin")
+		--vim.cmd.colorscheme("catppuccin-mocha")
 	end,
 }

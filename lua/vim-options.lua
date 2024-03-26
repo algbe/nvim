@@ -15,6 +15,7 @@ vim.cmd("set incsearch")
 vim.cmd("set mouse+=a")
 vim.cmd("set cursorline")
 vim.cmd("set termguicolors")
+vim.cmd("syntax on")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
