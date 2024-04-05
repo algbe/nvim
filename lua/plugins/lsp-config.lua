@@ -42,8 +42,8 @@ return {
 				require("telescope.builtin").lsp_references()
 			end, {})
 
-			vim.keymap.set("n", "<leader>ep", vim.diagnostic.goto_prev, { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>en", vim.diagnostic.goto_next, { noremap = true, silent = true })
+			vim.keymap.set("n", "[e", vim.diagnostic.goto_prev, { noremap = true, silent = true })
+			vim.keymap.set("n", "]e", vim.diagnostic.goto_next, { noremap = true, silent = true })
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 
 			local _border = "single"
